@@ -1,77 +1,75 @@
-# Sistema de Cadastro de Clientes - Projeto Python
+# CRUD de Clientes - Sistema de Cadastro
 
-Este projeto utiliza **Python**, **PySimpleGUI** para a interface gráfica e **MySQL** para o banco de dados, permitindo o gerenciamento de clientes. Funcionalidades incluem cadastro, listagem, edição e exclusão de clientes, com autenticação via login.
+Este projeto é um sistema simples de CRUD (Criar, Ler, Atualizar, Deletar) para o gerenciamento de clientes. Ele foi desenvolvido com a biblioteca **PySimpleGUI** para a interface gráfica e o **MySQL** para o banco de dados.
 
 ## Funcionalidades
 
-- **Cadastro de Clientes**: Adiciona novos clientes com informações como nome, CPF, e-mail, etc.
-- **Listagem de Clientes**: Exibe todos os clientes cadastrados.
-- **Edição de Clientes**: Permite editar informações de um cliente existente.
-- **Exclusão de Clientes**: Permite excluir um cliente do banco de dados.
+- **Criar**: Adicionar novos clientes ao banco de dados.
+- **Listar**: Visualizar todos os clientes cadastrados.
+- **Atualizar**: Editar os dados de um cliente existente.
+- **Deletar**: Remover um cliente do banco de dados.
 
-## Tecnologias Utilizadas
+## Tecnologias Usadas
 
-- **Python 3.x**
-- **PySimpleGUI**
-- **MySQL**
+- **Python**: Linguagem principal do projeto.
+- **PySimpleGUI**: Biblioteca para a criação da interface gráfica.
+- **MySQL**: Banco de dados para armazenar as informações dos clientes.
 
-## Como Executar o Projeto
+## Pré-requisitos
 
-### Passo 1: Clonar o Repositório
+- Ter o **Python 3** instalado.
+- Ter o **MySQL** instalado e configurado.
+- Ter o **PySimpleGUI** e o **mysql-connector** instalados no ambiente Python.
+
+## Instalação
+
+1. Clone este repositório no seu computador:
+    ```bash
+    git clone https://github.com/seunome/seu-repositorio.git
+    ```
+2. Acesse a pasta do projeto:
+    ```bash
+    cd seu-repositorio
+    ```
+3. Crie um ambiente virtual:
+    ```bash
+    python -m venv venv
+    ```
+4. Ative o ambiente virtual:
+    - **Windows**:
+        ```bash
+        venv\Scripts\activate
+        ```
+    - **Linux/macOS**:
+        ```bash
+        source venv/bin/activate
+        ```
+5. Instale as dependências do projeto:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+6. Configure o banco de dados MySQL com a tabela **clientes**.
+
+## Como Usar
+
+1. Execute o script principal:
+    ```bash
+    python main.py
+    ```
+2. O sistema de cadastro de clientes será aberto.
+3. Utilize a interface para adicionar, listar, atualizar e deletar clientes.
+
+## Estrutura do Projeto
+
+meu_projeto/ ├── database/ │ ├── init.py │ └── conexao.py ├── telas/ │ ├── init.py │ ├── criar.py │ ├── listar.py │ ├── login.py │ └── menu.py ├── init.py ├── main.py ├── requirements.txt └── README.md
 
 
-git clone https://github.com/seu_usuario/meu_projeto.git
-Passo 2: Criar e Ativar o Ambiente Virtual
-bash
-Copiar código
-python -m venv venv
-# No Windows
-venv\Scripts\activate
-# No Linux/Mac
-source venv/bin/activate
+## Contribuindo
 
+Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Para isso, basta fazer um **fork** do repositório, realizar as alterações e abrir um **pull request**.
 
-Passo 3: Instalar Dependências
-pip install -r requirements.txt
+## Licença
 
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-Passo 4: Configurar o Banco de Dados
-Crie o banco de dados e a tabela:
-
-
-CREATE DATABASE meu_projeto;
-USE meu_projeto;
-
-CREATE TABLE clientes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    cpf VARCHAR(14) NOT NULL UNIQUE,
-    data_cadastro DATE NOT NULL,
-    data_nascimento DATE NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE
-);
-
--- Inserir dados de exemplo
-INSERT INTO clientes (nome, cpf, data_cadastro, data_nascimento, email) VALUES
-('João Silva', '123.456.789-00', '2022-05-28', '1990-06-15', 'joao.silva@email.com'),
-...
-Passo 5: Executar o Projeto
-
-python main.py
-Estrutura do Projeto
-markdown
-Copiar código
-meu_projeto/
-├── database/
-│   ├── __init__.py
-│   └── conexao.py
-├── telas/
-│   ├── __init__.py
-│   ├── criar.py
-│   ├── listar.py
-│   ├── login.py
-│   └── menu.py
-├── __init__.py
-├── main.py
-├── requirements.txt
-└── README.md
